@@ -8,7 +8,7 @@
 
 ## Overview
 
-The Advantech EPC-7300 L2-02 AI Development Container provides a comprehensive environment for building and deploying AI applications on NVIDIA Jetson Orin NX hardware. This container features full hardware acceleration support, optimized AI frameworks, and industrial-grade reliability.
+The  ACC-L2-02-Edge-AI-enabled-Container provides a comprehensive environment for building and deploying AI applications on NVIDIA Jetson hardware. This container features full hardware acceleration support, optimized AI frameworks, and industrial-grade reliability.
 
 ### Key Features
 
