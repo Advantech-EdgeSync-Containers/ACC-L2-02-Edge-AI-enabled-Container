@@ -54,7 +54,7 @@ The  ACC-L2-02-Edge-AI-enabled-Container provides a comprehensive environment fo
 | Classification | ResNet (18/50), MobileNet (V1/V2/V3), EfficientNet (B0-B2) | ResNet18: 120-150 @ 224x224, MobileNetV2: 180-210 @ 224x224 | INT8, FP16, FP32 |
 | Pose Estimation | PoseNet, HRNet (up to W18) | PoseNet: 15-25 @ 256x256 | FP16, FP32 |
 
-### Language Models
+### Language Models Recommendation
 
 | Model Family | Versions | Memory Requirements | Performance Notes |
 |--------------|----------|---------------------|-------------------|
