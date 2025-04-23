@@ -22,11 +22,11 @@ The  ACC-L2-02-Edge-AI-enabled-Container provides a comprehensive environment fo
 
 | Component | Specification |
 |-----------|---------------|
-| Target Hardware | Advantech EPC-7300 L2-02 / NVIDIA Jetson Orin NX |
+| Target Hardware | NVIDIA Jetson |
 | GPU | NVIDIA Ampere architecture with 1024 CUDA cores |
 | DLA Cores | 1 (Deep Learning Accelerator) |
-| Memory | 8GB shared GPU/CPU memory |
-| JetPack Version | 5.1.1 (L4T R35.2.1) |
+| Memory | 4/8/16 GB shared GPU/CPU memory |
+| JetPack Version | 5.x |
 
 ## Software Components
 
