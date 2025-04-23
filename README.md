@@ -131,6 +131,9 @@ chmod +x build.sh
 
 # Launch the container
 ./build.sh
+
+# Verifying AI Accelerator and Software Stack Inside Docker Container
+./wise-bench.sh
 ```
 
 ### Model Optimization Workflows
