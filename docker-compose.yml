@@ -6,7 +6,7 @@ version: '2.4'
 # Copyright (c) 2025 Advantech Corporation. All rights reserved.
 services:
   advantech-l2-02:
-    image: harbor.arfa.wise-paas.com/advantech-coe-l2-02/advantech_coe_l2-02:v2
+    image: edgesync.azurecr.io/advantech/jetson-gpu-passthrough:1.0.0-Ubuntu20.04-ARM
     container_name: advantech-l2-02
     privileged: true
     network_mode: host
