@@ -1,9 +1,32 @@
 version: '2.4'
-# Advantech L2-02 AI development Docker Compose file
-# Created and maintained by Samir Singh <samir.singh@advantech.com>
-# This Docker Compose file configures the Advantech L2-02 AI development container
-# with all necessary hardware acceleration settings.
+# ==========================================================================
+# Jetson GPU Passthrough Docker Compose File
+# ==========================================================================
+# Version:      2.1.0
+# Author:       Samir Singh <samir.singh@advantech.com> and Apoorv Saxena<apoorv.saxena@advantech.com>
+# Created:      January 11, 2025
+# Last Updated: May 19, 2025
+# Key Features:
+#   • Full Hardware Acceleration:
+#       – Direct access to CUDA, cuDNN, TensorRT, NVENC/NVDEC, and DLA
+#       – Exposes all NVIDIA devices to the container
+#   • Display & GUI Support:
+#       – X11 forwarding with QT and EGL integration
+#       – Display passthrough for accelerated OpenGL/OpenGL ES rendering
+#   • Deep Learning Frameworks:
+#       – Ready for PyTorch, TensorFlow, ONNX Runtime, and TensorRT workflows
+#
+# Terms and Conditions:
+#   1. Provided by Advantech Corporation “as is,” without any express or implied
+#      warranties of merchantability or fitness for a particular purpose.
+#   2. In no event shall Advantech Corporation be liable for any direct, indirect,
+#      incidental, special, exemplary, or consequential damages arising from
+#      the use of this software.
+#   3. Redistribution and use in source and binary forms, with or without
+#      modification, are permitted provided this notice appears in all copies.
+#
 # Copyright (c) 2025 Advantech Corporation. All rights reserved.
+# ==========================================================================
 services:
   advantech-l2-02:
     image: edgesync.azurecr.io/advantech/jetson-gpu-passthrough:1.0.0-Ubuntu20.04-ARM

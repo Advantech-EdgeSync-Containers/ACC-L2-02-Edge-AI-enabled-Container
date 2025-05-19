@@ -1,8 +1,31 @@
 #!/bin/bash
-# Universal Docker Setup Script
-# Creates project directory structure and handles X11 forwarding for GUI applications in Docker
-# Clear the terminal
-
+# ==========================================================================
+# Jetson GPU Passthrough Docker Compose Build Script
+# ==========================================================================
+# Version:      2.1.0
+# Author:       Samir Singh <samir.singh@advantech.com> and Apoorv Saxena<apoorv.saxena@advantech.com>
+# Created:      January 10, 2025
+# Last Updated: May 19, 2025
+# Description:
+#   This script prepares a Docker environment optimized for GPU and display
+#   passthrough on Advantech edge AI platforms. It:
+#     • Creates standard project directories (src, models, data, diagnostics)
+#     • Configures X11 or Wayland forwarding for GUI applications
+#     • Sets up NVIDIA GPU device access and permissions in containers
+#     • Enables display passthrough for accelerated rendering
+#     • Launches containers with hardware acceleration support
+#
+# Terms and Conditions:
+#   1. Provided by Advantech Corporation “as is,” with no express or implied
+#      warranties of merchantability or fitness for a particular purpose.
+#   2. Advantech Corporation shall not be liable for any direct, indirect,
+#      incidental, special, exemplary, or consequential damages arising from
+#      the use of this software.
+#   3. Redistribution and use in source or binary form, with or without
+#      modification, are permitted provided this notice appears in all copies.
+#
+# Copyright (c) 2025 Advantech Corporation. All rights reserved.
+# ==========================================================================
 clear
 
 
