@@ -123,13 +123,13 @@ Built with NVIDIA-accelerated GStreamer plugins supporting:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Advantech_COE/L2-02
-cd L2-02
+git clone https://github.com/Advantech-EdgeSync-Containers/ACC-L2-02-Edge-AI-enabled-Container
+cd ACC-L2-02-Edge-AI-enabled-Container
 
 # Make the build script executable
 chmod +x build.sh
 
-# Launch the container
+# build and Launch the container
 ./build.sh
 
 # Verifying AI Accelerator and Software Stack Inside Docker Container
