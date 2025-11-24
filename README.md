@@ -1,4 +1,4 @@
-# ACC-L2-02-Edge-AI-enabled-Container
+# GPU Passthrough on NVIDIA Jetson™
 
 **Version:** 2.0  
 **Release Date:** April 2025  
@@ -6,7 +6,7 @@
 
 ## Overview
 
-The  ACC-L2-02-Edge-AI-enabled-Container provides a comprehensive environment for building and deploying AI applications on NVIDIA Jetson hardware. This container features full hardware acceleration support, optimized AI frameworks, and industrial-grade reliability.
+The  GPU Passthrough on NVIDIA Jetson™ provides a comprehensive environment for building and deploying AI applications on NVIDIA Jetson hardware. This container features full hardware acceleration support, optimized AI frameworks, and industrial-grade reliability.
 
 ### Key Features
 
@@ -121,8 +121,8 @@ Built with NVIDIA-accelerated GStreamer plugins supporting:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Advantech-EdgeSync-Containers/ACC-L2-02-Edge-AI-enabled-Container
-cd ACC-L2-02-Edge-AI-enabled-Container
+git clone https://github.com/Advantech-EdgeSync-Containers/GPU Passthrough on NVIDIA Jetson
+cd GPU Passthrough on NVIDIA Jetson
 
 # Make the build script executable
 chmod +x build.sh
