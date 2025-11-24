@@ -1,5 +1,3 @@
-![Advantech Logo](data/images/Advantech_logo.png)
-
 # ACC-L2-02-Edge-AI-enabled-Container
 
 **Version:** 2.0  
