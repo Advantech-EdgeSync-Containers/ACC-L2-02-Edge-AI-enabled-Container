@@ -121,8 +121,8 @@ Built with NVIDIA-accelerated GStreamer plugins supporting:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Advantech-EdgeSync-Containers/GPU Passthrough on NVIDIA Jetson
-cd GPU Passthrough on NVIDIA Jetson
+git clone https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson.git
+cd GPU-Passthrough-on-NVIDIA-Jetson
 
 # Make the build script executable
 chmod +x build.sh
