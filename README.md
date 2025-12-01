@@ -13,7 +13,7 @@ The  GPU Passthrough on NVIDIA Jetson™ provides a comprehensive environment fo
 - **Full Hardware Acceleration:** Optimized access to GPU, NVENC/NVDEC, and DLA
 - **Complete AI Framework Stack:** PyTorch, TensorFlow, ONNX Runtime, and TensorRT
 - **Industrial Vision Support:** Accelerated OpenCV and GStreamer pipelines
-- **Edge AI Capabilities:** Support for computer vision, LLMs, and time-series analysis
+- **Edge AI Capabilities:** Support for computer vision, and time-series analysis
 - **Performance Optimized:** Tuned specifically for Jetson Orin NX 8GB
 
 ## Hardware Specifications
@@ -52,21 +52,7 @@ The  GPU Passthrough on NVIDIA Jetson™ provides a comprehensive environment fo
 | Classification | ResNet (18/50), MobileNet (V1/V2/V3), EfficientNet (B0-B2) | ResNet18: 120-150 @ 224x224, MobileNetV2: 180-210 @ 224x224 | INT8, FP16, FP32 |
 | Pose Estimation | PoseNet, HRNet (up to W18) | PoseNet: 15-25 @ 256x256 | FP16, FP32 |
 
-### Language Models Recommendation
 
-| Model Family | Versions | Memory Requirements | Performance Notes |
-|--------------|----------|---------------------|-------------------|
-| DeepSeek Coder | Mini (1.3B), Light (1.5B) | 2-3 GB | 10-15 tokens/sec in FP16 |
-| TinyLlama | 1.1B | 2 GB | 8-12 tokens/sec in FP16 |
-| Phi | Phi-1.5 (1.3B), Phi-2 (2.7B) | 1.5-3 GB | Phi-1.5: 8-12 tokens/sec in FP16, Phi-2: 4-8 tokens/sec in FP16 |
-| Llama 2 | 7B (Quantized to 4-bit) | 3-4 GB | 1-2 tokens/sec in INT4/INT8 |
-| Mistral | 7B (Quantized to 4-bit) | 3-4 GB | 1-2 tokens/sec in INT4/INT8 |
-
-**DeepSeek R1 1.5B Optimizations Recommendations:**
-- Supports INT4-8 quantization for inference
-- Best performance with TensorRT engine conversion
-- Typical throughput: 8-12 tokens/sec in FP16, 12-18 tokens/sec in INT8
-- Recommended batch size: 1-2 for real-time applications
 
 ## Supported AI Model Formats
 
@@ -186,11 +172,10 @@ TensorFlow → SavedModel → TensorRT Engine
 
 ## Known Limitations
 
-1. **LLM Support**: Large language models over 3B parameters are not recommended due to memory constraints.
-2. **ONNX Runtime**: Limited GPU acceleration for complex operators.
-3. **Mixed Precision**: Some operations may fall back to FP32 even in FP16 mode.
-4. **Display Acceleration**: X11 forwarding performance may be limited.
-5. **ONNX Runtime GPU Support**: For optimal performance, convert ONNX models to TensorRT engines.
+1. **ONNX Runtime**: Limited GPU acceleration for complex operators.
+2. **Mixed Precision**: Some operations may fall back to FP32 even in FP16 mode.
+3. **Display Acceleration**: X11 forwarding performance may be limited.
+4. **ONNX Runtime GPU Support**: For optimal performance, convert ONNX models to TensorRT engines.
 
 
 Copyright © 2025 Advantech Corporation. All rights reserved.
