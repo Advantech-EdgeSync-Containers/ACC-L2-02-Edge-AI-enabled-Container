@@ -3,6 +3,7 @@
 **Version:** 2.0  
 **Release Date:** April 2025  
 **Copyright:** © 2025 Advantech Corporation. All rights reserved.
+>  Check our [Troubleshooting Wiki](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/wiki/Advantech-Containers'-Troubleshooting-Guide) for common issues and solutions.
 
 ## Overview
 
@@ -26,6 +27,8 @@ The  GPU Passthrough on NVIDIA Jetson™ provides a comprehensive environment fo
 | Memory | 4/8/16 GB shared GPU/CPU memory |
 | JetPack Version | 5.x |
 
+* CUDA , CuDNN , TensorRT , OpenCV versions Depends on JetPack version 5.x
+* Please refer to the [NVIDIA JetPack Documentation](https://developer.nvidia.com/embedded/jetpack) for more details on compatible versions.
 ## Software Components
 
 | Component | Version | Description |
@@ -35,7 +38,7 @@ The  GPU Passthrough on NVIDIA Jetson™ provides a comprehensive environment fo
 | TensorRT | 8.5.2.2 | Inference optimizer and runtime |
 | PyTorch | 2.0.0+nv23.02 | Deep learning framework |
 | TensorFlow | 2.12.0+nv23.05 | Machine learning framework |
-| ONNX Runtime | 1.16.3 | Cross-platform inference engine |
+| ONNX Runtime | 1.16.0 | Cross-platform inference engine |
 | OpenCV | 4.5.0 | Computer vision library with CUDA |
 | GStreamer | 1.16.2 | Multimedia framework |
 
@@ -101,6 +104,14 @@ Built with NVIDIA-accelerated GStreamer plugins supporting:
 | RTSP Client | Full | GStreamer 1.16.2 | Low-latency streaming reception |
 | Camera Capture | Full | V4L2, ArgusCamera | Direct camera integration |
 
+
+## Before You Start 
+- Ensure the following components are installed on your host system:
+  - **Docker** (v28.1.1 or compatible)
+  - **Docker Compose** (v2.39.1 or compatible)
+  - **NVIDIA Container Toolkit** (v1.11.0 or compatible)
+  - **NVIDIA Runtime** configured in Docker
+  
 ## Quick Start Guide
 
 ### Installation
@@ -120,32 +131,7 @@ chmod +x build.sh
 ./wise-bench.sh
 ```
 
-### Model Optimization Workflows
 
-For optimal performance, follow these recommended model conversion paths:
-
-#### ONNX Models
-```
-Original Framework → ONNX → TensorRT Engine
-```
-
-#### PyTorch Models
-```
-PyTorch → TorchScript → ONNX → TensorRT Engine
-```
-or
-```
-PyTorch → ONNX → TensorRT Engine
-```
-
-#### TensorFlow Models
-```
-TensorFlow → SavedModel → ONNX → TensorRT Engine
-```
-or
-```
-TensorFlow → SavedModel → TensorRT Engine
-```
 
 ## Best Practices
 
@@ -176,6 +162,13 @@ TensorFlow → SavedModel → TensorRT Engine
 2. **Mixed Precision**: Some operations may fall back to FP32 even in FP16 mode.
 3. **Display Acceleration**: X11 forwarding performance may be limited.
 4. **ONNX Runtime GPU Support**: For optimal performance, convert ONNX models to TensorRT engines.
+
+## Support
+
+For documentation and troubleshooting, visit the [Troubleshooting Wiki](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/wiki/Advantech-Containers'-Troubleshooting-Guide).
+
+For issues, submit to [GitHub Issues](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/issues).
+
 
 
 Copyright © 2025 Advantech Corporation. All rights reserved.
