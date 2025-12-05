@@ -5,7 +5,7 @@
 # Version:      2.0.0
 # Author:       Samir Singh <samir.singh@nvantech.com> and Apoorv Saxena<apoorv.saxena@advantech.com>
 # Created:      January 10, 2025
-# Last Updated: Dec 03, 2025
+# Last Updated: Dec 05, 2025
 # Description:
 #   This script prepares a Docker environment optimized for GPU and display
 #   passthrough on Advantech edge AI platforms. It:
