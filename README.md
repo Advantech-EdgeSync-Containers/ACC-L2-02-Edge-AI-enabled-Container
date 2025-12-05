@@ -30,6 +30,7 @@ For troubleshooting, see the [Troubleshooting Wiki](https://github.com/Advantech
 ## Table of Contents
 
 - [System Requirements](#system-requirements)
+- [Directory Structure](#directory-structure)
 - [Before You Start](#Before-You-Start)
 - [Quick Start](#quick-start)
 - [Supported AI Model Formats](#Supported-AI-Model-Formats)
@@ -72,6 +73,22 @@ The Docker container includes the following pre-configured components.
 | ONNX Runtime | 1.16.0 | Cross-platform inference engine |
 | OpenCV | 4.5.0 | Computer vision library with CUDA |
 | GStreamer | 1.16.2 | Multimedia framework |
+
+## Directory Structure
+
+```
+GPU-Passthrough-on-NVIDIA-Jetson/
+├── build.sh                         # Build/setup script
+├── init.sh                          # Initialization script
+├── wise-bench.sh                    # Hardware & GPU diagnostic tool
+├── docker-compose.yml               # Container configuration
+├── data/                            # Data assets
+│   └── images/                      # Project images
+│       ├── Advantech_logo.png       # Advantech branding image
+│       └── wisebenchlog.png         # WiseBench result visualization
+├── LICENSE                          # Project license
+└── README.md                        # Documentation
+```
 
 ## Before You Start
 Before proceeding, ensure that your system meets the required [general-required-packages-on-host-system](#general-required-packages-on-host-system). If you encounter any issues or inconsistencies in your environment, please consult our [Troubleshooting Wiki](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/wiki/Advantech-Containers'-Troubleshooting-Guide) for solutions and to verify that all prerequisites are properly satisfied
@@ -173,6 +190,8 @@ Built with NVIDIA-accelerated GStreamer plugins supporting:
 | RTSP Server | Full | GStreamer RTSP Server 1.16.2 | Streaming capabilities |
 | RTSP Client | Full | GStreamer 1.16.2 | Low-latency streaming reception |
 | Camera Capture | Full | V4L2, ArgusCamera | Direct camera integration |
+
+
 
 
 ## Best Practices
