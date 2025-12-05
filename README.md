@@ -3,7 +3,6 @@
 **Version:** 2.0  
 **Release Date:** April 2025  
 **Copyright:** © 2025 Advantech Corporation. All rights reserved.
->  Check our [Troubleshooting Wiki](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/wiki/Advantech-Containers'-Troubleshooting-Guide) for common issues and solutions.
 
 ## Overview
 
@@ -16,6 +15,29 @@ The  GPU Passthrough on NVIDIA Jetson™ provides a comprehensive environment fo
 - **Industrial Vision Support:** Accelerated OpenCV and GStreamer pipelines
 - **Edge AI Capabilities:** Support for computer vision, and time-series analysis
 - **Performance Optimized:** Tuned specifically for Jetson Orin NX 8GB
+
+### Supported Hardware
+
+| Specification | Details |
+|:--------------|:--------|
+| Platform | NVIDIA Jetson (Orin-nano, Orin-nx, Xavier AGX) |
+| GPU Architecture | Ampere, Volta, Pascal |
+| Memory | 4GB, 8GB, 16GB or 32GB shared |
+| JetPack | 5.x |
+
+For troubleshooting, see the [Troubleshooting Wiki](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/wiki/Advantech-Containers'-Troubleshooting-Guide).
+
+## Table of Contents
+
+- [System Requirements](#system-requirements)
+- [Before You Start](#Before-You-Start)
+- [Quick Start](#quick-start)
+- [Supported AI Model Formats](#Supported-AI-Model-Formats)
+- [Hardware Acceleration Support](#Hardware-Acceleration-Support)
+- [Video/Camera Processing](#Video/Camera-Processing)
+- [Best Practices](#Best-Practices)
+- [Limitations](#limitations)
+- [Support](#Support)
 
 ## System Requirements
 
@@ -36,31 +58,60 @@ Install these components on your Advantech device before using this toolkit.
 
 Component versions depend on your **JetPack Version**. See [NVIDIA JetPack Documentation](https://developer.nvidia.com/embedded/jetpack) for package version and for installation please refer to [SDK Manager](https://developer.nvidia.com/sdk-manager). 
 
-## Hardware Specifications
+### Container Environment
 
-| Component | Specification |
-|-----------|---------------|
-| Target Hardware | NVIDIA Jetson |
-| GPU | NVIDIA Ampere architecture with 1024 CUDA cores |
-| DLA Cores | 1 (Deep Learning Accelerator) |
-| Memory | 4/8/16 GB shared GPU/CPU memory |
-| JetPack Version | 5.x |
-
-* CUDA , CuDNN , TensorRT , OpenCV versions Depends on JetPack version 5.x
-* Please refer to the [NVIDIA JetPack Documentation](https://developer.nvidia.com/embedded/jetpack) for more details on compatible versions.
-## Software Components
+The Docker container includes the following pre-configured components.
 
 | Component | Version | Description |
-|-----------|---------|-------------|
+|:----------|:--------|:------------|
 | CUDA | 11.4.315 | GPU computing platform |
 | cuDNN | 8.6.0 | Deep Neural Network library |
 | TensorRT | 8.5.2.2 | Inference optimizer and runtime |
 | PyTorch | 2.0.0+nv23.02 | Deep learning framework |
-| TensorFlow | 2.12.0+nv23.05 | Machine learning framework |
+| TensorFlow | 2.12.0 | Machine learning framework |
 | ONNX Runtime | 1.16.0 | Cross-platform inference engine |
 | OpenCV | 4.5.0 | Computer vision library with CUDA |
 | GStreamer | 1.16.2 | Multimedia framework |
 
+## Before You Start
+Before proceeding, ensure that your system meets the required [general-required-packages-on-host-system](#general-required-packages-on-host-system). If you encounter any issues or inconsistencies in your environment, please consult our [Troubleshooting Wiki](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/wiki/Advantech-Containers'-Troubleshooting-Guide) for solutions and to verify that all prerequisites are properly satisfied
+
+- Ensure the following components are installed on your device along with other packages mentioned in the [general-required-packages-on-host-system](#general-required-packages-on-host-system):
+  - **Docker**
+  - **Docker Compose**
+  - **NVIDIA Container Toolkit**
+  - **NVIDIA Runtime** 
+
+---
+
+## Quick Start
+
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson.git
+cd GPU-Passthrough-on-NVIDIA-Jetson
+```
+
+### Step 2: Set Permissions
+Grant execute permissions to the setup scripts.
+```bash
+chmod +x *.sh
+```
+### Step 3: Start the Container
+
+Launch the Docker environment. This script creates project directories, configures GPU access, and opens an interactive terminal inside the container.
+```bash
+./build.sh
+```
+### Step 5: Verify Installation (Optional)
+Run the diagnostic script to confirm hardware acceleration is working.
+```bash
+./wise-bench.sh
+```
+The wise-bench script will run as below as per the system specifications.
+![wise-bench](data/wisebench.png)
+
+---
 ## Supported AI Capabilities
 
 ### Vision Models
@@ -124,37 +175,6 @@ Built with NVIDIA-accelerated GStreamer plugins supporting:
 | Camera Capture | Full | V4L2, ArgusCamera | Direct camera integration |
 
 
-## Before You Start
-Before proceeding, ensure that your system meets the required [general-required-packages-on-host-system](#general-required-packages-on-host-system). If you encounter any issues or inconsistencies in your environment, please consult our [Troubleshooting Wiki](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/wiki/Advantech-Containers'-Troubleshooting-Guide) for solutions and to verify that all prerequisites are properly satisfied
-
-- Ensure the following components are installed on your device along with other packages mentioned in the [general-required-packages-on-host-system](#general-required-packages-on-host-system):
-  - **Docker**
-  - **Docker Compose**
-  - **NVIDIA Container Toolkit**
-  - **NVIDIA Runtime** 
-
-  
-## Quick Start Guide
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson.git
-cd GPU-Passthrough-on-NVIDIA-Jetson
-
-# Make the build script executable
-chmod +x build.sh
-
-# build and Launch the container
-./build.sh
-
-# Verifying AI Accelerator and Software Stack Inside Docker Container
-./wise-bench.sh
-```
-
-
-
 ## Best Practices
 
 ### Memory Management
@@ -178,7 +198,7 @@ chmod +x build.sh
 - Process at native resolution when possible
 - Consider downsampling for higher throughput
 
-## Known Limitations
+## Limitations
 
 1. **ONNX Runtime**: Limited GPU acceleration for complex operators.
 2. **Mixed Precision**: Some operations may fall back to FP32 even in FP16 mode.
@@ -188,9 +208,6 @@ chmod +x build.sh
 ## Support
 
 For documentation and troubleshooting, visit the [Troubleshooting Wiki](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/wiki/Advantech-Containers'-Troubleshooting-Guide).
-
 For issues, submit to [GitHub Issues](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/issues).
-
-
 
 Copyright © 2025 Advantech Corporation. All rights reserved.
