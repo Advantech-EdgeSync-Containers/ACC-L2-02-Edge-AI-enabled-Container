@@ -38,6 +38,7 @@ For troubleshooting, see the [Troubleshooting Wiki](https://github.com/Advantech
 - [Video/Camera Processing](#Video/Camera-Processing)
 - [Best Practices](#Best-Practices)
 - [Limitations](#limitations)
+- [License](#license)
 - [Support](#Support)
 
 ## System Requirements
@@ -223,6 +224,16 @@ Built with NVIDIA-accelerated GStreamer plugins supporting:
 2. **Mixed Precision**: Some operations may fall back to FP32 even in FP16 mode.
 3. **Display Acceleration**: X11 forwarding performance may be limited.
 4. **ONNX Runtime GPU Support**: For optimal performance, convert ONNX models to TensorRT engines.
+
+## License
+
+GNU General Public License v3.0
+
+Copyright © 2025 Advantech Corporation. All rights reserved.
+This software is provided by Advantech Corporation "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose, are disclaimed.
+
+
+For complete license details, see [LICENSE](LICENSE) for complete terms.
 
 ## Support
 
