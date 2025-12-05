@@ -34,6 +34,7 @@ Install these components on your Advantech device before using this toolkit.
 | Docker Compose | 2.39.1 or later |
 | NVIDIA Container Toolkit | 1.11.0 or later |
 
+Component versions depend on your **JetPack Version**. See [NVIDIA JetPack Documentation](https://developer.nvidia.com/embedded/jetpack) for package version and for installation please refer to [SDK Manager](https://developer.nvidia.com/sdk-manager). 
 
 ## Hardware Specifications
 
