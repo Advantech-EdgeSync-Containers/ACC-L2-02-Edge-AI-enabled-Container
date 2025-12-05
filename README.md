@@ -85,7 +85,6 @@ GPU-Passthrough-on-NVIDIA-Jetson/
 ├── docker-compose.yml               # Container configuration
 ├── data/                            # Data assets
 │   └── images/                      # Project images
-│       ├── Advantech_logo.png       # Advantech branding image
 │       └── wisebenchlog.png         # WiseBench result visualization
 ├── LICENSE                          # Project license
 └── README.md                        # Documentation
