@@ -103,7 +103,7 @@ Launch the Docker environment. This script creates project directories, configur
 ```bash
 ./build.sh
 ```
-### Step 5: Verify Installation (Optional)
+### Step 4: Verify Installation (Optional)
 Run the diagnostic script to confirm hardware acceleration is working.
 ```bash
 ./wise-bench.sh
