@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Advantech YOLO Vision - Environment Init | Version 2.0.0 | Copyright (c) 2024-2025 Advantech Corporation
+# GPU-Passthrough-on-NVIDIA-Jetson - Environment Init | Version 2.0.0 | Copyright (c) 2024-2025 Advantech Corporation
 readonly SCRIPT_VERSION="2.0.0"
 readonly ONNX_WHEEL_URL="https://nvidia.box.com/shared/static/iizg3ggrtdkqawkmebbfixo7sce6j365.whl"
 readonly ONNX_WHEEL_NAME="onnxruntime_gpu-1.16.0-cp38-cp38-linux_aarch64.whl"
