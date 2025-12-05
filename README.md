@@ -109,7 +109,7 @@ Run the diagnostic script to confirm hardware acceleration is working.
 ./wise-bench.sh
 ```
 The wise-bench script will run as below as per the system specifications.
-![wise-bench](data/wisebench.png)
+![wise-bench](data/images/wisebenchlog.png)
 
 ---
 ## Supported AI Capabilities
