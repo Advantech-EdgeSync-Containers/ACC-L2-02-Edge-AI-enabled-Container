@@ -17,6 +17,24 @@ The  GPU Passthrough on NVIDIA Jetson™ provides a comprehensive environment fo
 - **Edge AI Capabilities:** Support for computer vision, and time-series analysis
 - **Performance Optimized:** Tuned specifically for Jetson Orin NX 8GB
 
+## System Requirements
+
+### General Required Packages on Host System
+
+Install these components on your Advantech device before using this toolkit.
+
+| Component | Version |
+|:----------|:--------|
+| JetPack | 5.1.2 |
+| CUDA | 11.4.315 |
+| cuDNN | 8.6.0.166 |
+| TensorRT | 8.5.2.2 |
+| OpenCV | 4.5.4 |
+| Docker | 28.1.1 or later |
+| Docker Compose | 2.39.1 or later |
+| NVIDIA Container Toolkit | 1.11.0 or later |
+
+
 ## Hardware Specifications
 
 | Component | Specification |
@@ -105,12 +123,15 @@ Built with NVIDIA-accelerated GStreamer plugins supporting:
 | Camera Capture | Full | V4L2, ArgusCamera | Direct camera integration |
 
 
-## Before You Start 
-- Ensure the following components are installed on your host system:
-  - **Docker** (v28.1.1 or compatible)
-  - **Docker Compose** (v2.39.1 or compatible)
-  - **NVIDIA Container Toolkit** (v1.11.0 or compatible)
-  - **NVIDIA Runtime** configured in Docker
+## Before You Start
+Before proceeding, ensure that your system meets the required [general-required-packages-on-host-system](#general-required-packages-on-host-system). If you encounter any issues or inconsistencies in your environment, please consult our [Troubleshooting Wiki](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/wiki/Advantech-Containers'-Troubleshooting-Guide) for solutions and to verify that all prerequisites are properly satisfied
+
+- Ensure the following components are installed on your device along with other packages mentioned in the [general-required-packages-on-host-system](#general-required-packages-on-host-system):
+  - **Docker**
+  - **Docker Compose**
+  - **NVIDIA Container Toolkit**
+  - **NVIDIA Runtime** 
+
   
 ## Quick Start Guide
 
